@@ -3,6 +3,7 @@ package com.coding.java.datastructure.Array.scaler.refresher.Array2D;
 import java.util.Scanner;
 
 public class MatrixAddition {
+
     // Function to add two matrices
     public static int[][] addMatrices(int[][] A, int[][] B, int rows, int cols) {
         int[][] C = new int[rows][cols];
