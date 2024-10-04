@@ -16,7 +16,8 @@ package com.coding.java.datastructure.scaler.Array1D.intermediate.slidingWindowA
  * 1 <= Ai <= 10 4
  *
  * Approach:
- * To solve this problem efficiently, we can avoid calculating the sum of each subarray individually, which would take O(N^3) time in the brute-force approach.
+ * To solve this problem efficiently, we can avoid calculating the sum of each subarray individually,
+ *  which would take O(N^3) time in the brute-force approach.
  *
  * Instead, we use the observation that:
  *
