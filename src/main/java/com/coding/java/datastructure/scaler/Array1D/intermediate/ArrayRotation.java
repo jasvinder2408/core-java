@@ -26,18 +26,18 @@ public class ArrayRotation {
         }
     }
     
-    // Function to rotate the array to the right by B positions
+    // Function to rotate the array to the right by K positions
     public static int[] rotateArray(int[] A, int K) {
         int N = A.length;
-        K = K % N;  // Normalize B (if B > N, rotating by B is the same as B % N)
+        K = K % N;  // Normalize K (if K > N, rotating by K is the same as K % N)
         
         // Step 1: Reverse the entire array
         reversePart(A, 0, N - 1);
         
-        // Step 2: Reverse the first B elements
+        // Step 2: Reverse the first K elements
         reversePart(A, 0, K - 1);
         
-        // Step 3: Reverse the remaining N-B elements
+        // Step 3: Reverse the remaining N-K elements
         reversePart(A, K, N - 1);
         
         return A;
@@ -45,10 +45,10 @@ public class ArrayRotation {
     
     public static void main(String[] args) {
         int[] A = {1, 2, 3, 4, 5};
-        int B = 2;
+        int K = 12;
         
         System.out.println("Original Array: " + Arrays.toString(A));
-        rotateArray(A, B);
-        System.out.println("Array after rotating " + B + " times: " + Arrays.toString(A));
+        rotateArray(A, K);
+        System.out.println("Array after rotating " + K + " times: " + Arrays.toString(A));
     }
 }

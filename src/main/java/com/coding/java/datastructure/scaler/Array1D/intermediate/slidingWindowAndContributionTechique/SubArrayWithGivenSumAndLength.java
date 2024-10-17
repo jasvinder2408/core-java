@@ -7,7 +7,8 @@ package com.coding.java.datastructure.scaler.Array1D.intermediate.slidingWindowA
  * Return 1 if there exists a subarray with length K having sum C and 0 otherwise
  *
  * Approach:
- * We can solve this problem efficiently using the sliding window technique. The idea is to maintain a window of size K and keep track of the sum of the elements within the window. By sliding the window across the array, we can compute the sum of each subarray of size K and check if it equals C.
+ * We can solve this problem efficiently using the sliding window technique. The idea is to maintain a window of size K and keep track of the sum of the elements within the window.
+ * By sliding the window across the array, we can compute the sum of each subarray of size K and check if it equals C.
  *
  * Steps:
  * Start by calculating the sum of the first K elements (i.e., the first subarray of size K).
@@ -57,8 +58,8 @@ public class SubArrayWithGivenSumAndLength {
 
     public static void main(String[] args) {
         int[] A = {4, 2, 2, 5, 1};  // Example array
-        int K = 4;                   // Length of the subarray
-        int C = 6;                   // Desired sum
+        int K = 3;                   // Length of the subarray
+        int C = 8;                   // Desired sum
 
         int result = isSubarrayWithSum(A, A.length, K, C);
         System.out.println(result);  // Output: 1 (as subarray [2, 3] has sum 5)

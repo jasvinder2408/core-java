@@ -12,38 +12,45 @@ import java.util.Scanner;
  * For each test case, initialize two counters: one for even numbers and one for odd numbers.
  */
 public class EvenOddDifference_9 {
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        // Read the number of test cases
-        int T = sc.nextInt();
+        // Read number of test cases
+        int T = scanner.nextInt();
 
-        // Loop over each test case
+        // Process each test case
         for (int t = 0; t < T; t++) {
-            // Read the size of the array
-            int n = sc.nextInt();
 
-            // Initialize counters for even and odd numbers
-            int evenCount = 0;
-            int oddCount = 0;
+            int n = scanner.nextInt(); // Read the size of the array
+            int[] arr = new int[n];
 
-            // Read the array elements and count evens and odds
+            // Read the array elements
             for (int i = 0; i < n; i++) {
-                int num = sc.nextInt();
-                if (num % 2 == 0) {
-                    evenCount++;
-                } else {
-                    oddCount++;
-                }
+                arr[i] = scanner.nextInt();
             }
 
-            // Calculate the absolute difference between even and odd counts
-            int difference = Math.abs(evenCount - oddCount);
-
-            // Output the result for this test case
-            System.out.println(difference);
+            // Calculate the absolute difference between counts of even and odd elements
+            int result = countEvenOddDifference(arr);
+            System.out.println(result);
         }
 
-        sc.close();
+        scanner.close();
+    }
+
+    public static int countEvenOddDifference(int[] arr) {
+        int evenCount = 0;
+        int oddCount = 0;
+
+        for (int num : arr) {
+
+            if (num % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+
+        return Math.abs(evenCount - oddCount);
     }
 }
