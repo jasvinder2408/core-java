@@ -1,42 +1,38 @@
 package com.coding.java.datastructure.scaler.Array.OneD.intermediate.prefixSum;
 
-/**
- *
- *
- * Plan:
- * ======
- * Prefix Sum Arrays:
- *
- * pfEven[i]: The sum of all even-indexed elements from index 0 to i.
- * pfOdd[i]: The sum of all odd-indexed elements from index 0 to i.
- *
- * Total Sums:
- *
- * sumEven: The total sum of all elements at even indices.
- * sumOdd: The total sum of all elements at odd indices.
- *
- * How to Check Each Index:
- *
- * For each index i:
- * Remove the element at index i.
- * For elements before i, the sums of even and odd indices remain the same.
- * For elements after i, the positions of even and odd indices will shift:
- * If i is even, the elements that were previously at odd indices become even-indexed after removal.
- * If i is odd, the elements that were previously at even indices become odd-indexed after removal.
+/*
+  Plan:
+  ======
+  Prefix Sum Arrays:
 
- * Key Calculation:
- *
- * If removing arr[i] makes the sum of even and odd indexed elements equal, we count that index.
+  pfEven[i]: The sum of all even-indexed elements from index 0 to i.
+  pfOdd[i]: The sum of all odd-indexed elements from index 0 to i.
+
+  Total Sums:
+
+  sumEven: The total sum of all elements at even indices.
+  sumOdd: The total sum of all elements at odd indices.
+
+  How to Check Each Index:
+  =========================
+  For each index i:
+  Remove the element at index i.
+  For elements before i, the sums of even and odd indices remain the same.
+  For elements after i, the positions of even and odd indices will shift:
+  If i is even, the elements that were previously at odd indices become even-indexed after removal.
+  If i is odd, the elements that were previously at even indices become odd-indexed after removal.
+
+  Key Calculation:
+
+  If removing arr[i] makes the sum of even and odd indexed elements equal, we count that index.
  */
 public class SpecialIndex {
     public static int cntIndexesToMakeBalance(int[] A) {
 
         int count = 0, N = A.length;
 
-
         if (N == 1)
             return 1;
-
 
         if (N == 2)
             return 0;
@@ -56,10 +52,10 @@ public class SpecialIndex {
 
             if (i%2 == 0) {
                 pfOdd[i] = pfOdd[i-1];
-                pfEven[i] = pfEven[i-1] + A[i];
+                pfEven[i] = A[i] + pfEven[i-1];
             }
             else {
-                pfOdd[i] = pfOdd[i-1]  + A[i];
+                pfOdd[i] = A[i] + pfOdd[i-1] ;
                 pfEven[i] = pfEven[i-1];
             }
         }

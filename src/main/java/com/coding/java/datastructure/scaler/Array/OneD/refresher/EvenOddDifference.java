@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * For each test case, initialize two counters: one for even numbers and one for odd numbers.
  */
-public class EvenOddDifference_9 {
+public class EvenOddDifference {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

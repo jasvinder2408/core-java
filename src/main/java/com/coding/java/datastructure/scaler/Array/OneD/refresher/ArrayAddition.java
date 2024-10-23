@@ -12,7 +12,7 @@ package com.coding.java.datastructure.scaler.Array.OneD.refresher;
  * O/p:
  * You have to return an integer array.
  */
-public class ArrayAddition_6 {
+public class ArrayAddition {
 
     public static void main(String[] args) {
         // Example constant array and integer B

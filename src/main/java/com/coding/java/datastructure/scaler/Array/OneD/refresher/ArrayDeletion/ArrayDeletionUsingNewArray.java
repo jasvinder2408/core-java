@@ -1,8 +1,8 @@
-package com.coding.java.datastructure.scaler.Array.OneD.refresher;
+package com.coding.java.datastructure.scaler.Array.OneD.refresher.ArrayDeletion;
 
 import java.util.Scanner;
 
-public class ArrayDeletion_3 {
+public class ArrayDeletionUsingNewArray {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
